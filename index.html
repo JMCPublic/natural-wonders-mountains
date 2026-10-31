@@ -241,7 +241,7 @@ const WHERE={World:{t:'🌍 World',s:'Famous peaks everywhere'},EU:{t:'Europe'},
 const MODES={rank:{t:'Rank by height',s:'Put the peaks in order'},name:{t:'Name the peak',s:'Pick from five names'},mixed:{t:'Mixed',s:'A bit of both'}};
 const DEPTHN={3:{t:'2nd and 3rd',s:'Three peaks'},5:{t:'2nd to 5th',s:'Five peaks. Hard'}};
 const ROUNDS=[5,10];const ORD=['1st','2nd','3rd','4th','5th'];const LET='abcde';const MINGAP=1.05;
-let S={screen:'menu',where:'World',mode:'mixed',depthn:5,rounds:5,layout:'auto',game:[],cur:0,locZoom:1};
+let S={screen:'menu',where:'World',mode:'mixed',depthn:3,rounds:5,layout:'auto',game:[],cur:0,locZoom:1};
 try{const s=JSON.parse(localStorage.getItem('nwm_settings')||'{}');['where','mode','depthn','rounds','layout'].forEach(k=>{if(s[k]!==undefined)S[k]=s[k]})}catch(e){}
 function save(){try{localStorage.setItem('nwm_settings',JSON.stringify({where:S.where,mode:S.mode,depthn:S.depthn,rounds:S.rounds,layout:S.layout}))}catch(e){}}
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
